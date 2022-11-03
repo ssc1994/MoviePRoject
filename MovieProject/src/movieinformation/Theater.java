@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 
 public class Theater {//현재 상영중인 영화
-	private MovieList movie; //영화 정보
+	private MovieInfo movie; //영화 정보
 	private int round; //회차 정보
 	private String start; //시작시간 
 	private String finish; //끝시간
@@ -28,7 +28,6 @@ public class Theater {//현재 상영중인 영화
 
 		// 화면 중앙에 띄우기
 		jf.setLocationRelativeTo(null);
-		
 		// x버튼 누르면 종료되게 설정
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jf.setVisible(true);

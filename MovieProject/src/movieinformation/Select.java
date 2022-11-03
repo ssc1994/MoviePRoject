@@ -39,16 +39,6 @@ public class  Select {
 		btn1.setPreferredSize(twoButtonSize);
 		btn2.setPreferredSize(twoButtonSize);
 		
-		//bt1(영화정보) 클릭 했을 때 MovieInfo 클래스로 이동
-		btn1.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				new MovieInfo();
-				jf.setVisible(false);
-			}
-			
-		});
 		//bt2(영화예매) 클릭 했을 때 Theater 클래스로 이동
 		btn2.addActionListener(new ActionListener() {
 

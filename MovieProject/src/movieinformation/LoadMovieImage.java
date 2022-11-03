@@ -22,7 +22,7 @@ BufferedImage img;
     //디폴트 생성자
     public LoadMovieImage() {
        try {
-      String filename="C:\\Users\\user\\git\\MovieProject\\MovieProject\\src\\movieinformation\\영화정보폴더\\블랙아담.jpg"; // 파일의 경로
+      String filename="C:\\Users\\user\\git\\MovieProject\\MovieProject\\movie_images\\리멤버.jpg"; // 파일의 경로
            img = ImageIO.read(new File(filename)); //이미지 파일을 불러오는 IO 메소드
             //파일경로의 이미지 파일을 읽는다.
        } catch (IOException e) {
