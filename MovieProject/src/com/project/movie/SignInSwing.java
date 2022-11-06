@@ -81,7 +81,7 @@ public class SignInSwing {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					//기존에 있는 아이디 가져오기
-					BufferedReader bfr = new BufferedReader(new FileReader("C:\\Users\\user\\Desktop\\login.txt"));
+					BufferedReader bfr = new BufferedReader(new FileReader("/Users/css/Desktop/login.txt"));
 					String line = bfr.readLine();
 					String eid = line.split("\t")[0];
 					String eidlower=eid.toLowerCase();

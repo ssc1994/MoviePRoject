@@ -96,7 +96,7 @@ public class Reservation {//예매정보 객체
 		col.setPreferredSize(new Dimension(20,240));
 		col.setLayout(new GridLayout(7,0));
 		row3_1.add(col);
-		row3_2.setPreferredSize(new Dimension(450,250));
+		row3_2.setPreferredSize(new Dimension(550,250));
 		row3_2.setLayout(new GridLayout(7,10));
 		for(int i = 0 ; i< 7 ; i++) {
 			for(int j = 0 ; j<10 ; j++) {
@@ -189,7 +189,6 @@ public class Reservation {//예매정보 객체
 			if(e.getStateChange()==1) {
 				seatsNumber.add(cb.getText());
 				seatsNumberSave.add(cb.getText());
-				System.out.println(seatsNumber);
 				cho += seatsNumber;
 				choice.setText(cho);
 				if(seatsNumber.size() >=Personcheck+2) {
@@ -204,7 +203,6 @@ public class Reservation {//예매정보 객체
 					};
 					seatsNumber.remove(String.valueOf(cb.getText()));
 					seatsNumberSave.remove(String.valueOf(cb.getText()));
-					System.out.println(seatsNumber);
 					cho += seatsNumber;
 					choice.setText(cho);
 			}
