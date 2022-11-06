@@ -119,6 +119,8 @@ public class LogInSwing {
 					setInfoname(infoname.get(loginidtext.getText()));
 					setInfoAge(infoage.get(loginidtext.getText()));
 					//로그인했으면 예매창으로 넘어가기
+					new Select();
+					l.setVisible(false);
 					
 				}
 			}

@@ -230,7 +230,6 @@ public class SignInSwing {
 		namepanel.add(nametext);
 		namepanel.add(namebutton);
 		s.add(namepanel);
-		s.setVisible(true);
 		s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//창이 닫히면 콘솔 종료
 		s.setVisible(true);
 
@@ -272,7 +271,6 @@ public class SignInSwing {
 		agepanel.add(agetext);
 		agepanel.add(agebutton);
 		s.add(agepanel);
-		s.setVisible(true);
 		s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//창이 닫히면 콘솔 종료
 		s.setVisible(true);
 
@@ -283,7 +281,7 @@ public class SignInSwing {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					//아이디부터 나이까지 조건 다 맞으면 그때 저장
-					signup = new PrintStream(new FileOutputStream("C:\\Users\\user\\Desktop\\login.txt",true));
+					signup = new PrintStream(new FileOutputStream("/Users/css/Desktop/login.txt",true));
 					if(!agetext.getText().matches("^[0-9]*$")||Integer.parseInt(agetext.getText())<=0||Integer.parseInt(agetext.getText())>=300){
 						JOptionPane.showMessageDialog(null,"나이의 형식이 잘못되었습니다");
 						agetext.setText(null);

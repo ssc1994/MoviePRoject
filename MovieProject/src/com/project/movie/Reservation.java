@@ -33,12 +33,11 @@ public class Reservation {//예매정보 객체
 		JPanel row5 = new JPanel();
 		JPanel row6 = new JPanel();
 		JPanel row7 = new JPanel();
-		resFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Font font1 = new Font("맑은고딕", Font.BOLD,20);
 		Font font2 = new Font("맑은고딕", Font.BOLD, 15);
 		Font seat = new Font("맑은고딕",Font.BOLD,10);
 		Font colfont = new Font("맑은고딕", Font.PLAIN, 16);
 		Font rowfont = new Font("맑은고딕", Font.BOLD, 12);
+		resFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     
 		//예매완료 버튼 생성
 		JButton res = new JButton("예매완료");
@@ -46,34 +45,27 @@ public class Reservation {//예매정보 객체
 		//뒤로가기 버튼 생성
 		JButton back = new JButton("뒤로가기");
 		row7.add(back);
-		//row1에 날짜 //영화명//회차(영화시간) 표시
-		JLabel year = new JLabel();
-		String t1 =now1.get(Calendar.YEAR) + " 년 " ;
-		year.setText(t1);
-		JLabel month = new JLabel();
-		String t2 =(now1.get(Calendar.MONTH)+1) + " 월 " ;
-		month.setText(t2);
-		JLabel day = new JLabel();
-		String t3 = now1.get(Calendar.DAY_OF_MONTH) + " 일";
-		day.setText(t3);
-		JPanel today = new JPanel();
-		today.setLayout(new BoxLayout(today,BoxLayout.Y_AXIS));
-		today.add(year);
-		today.add(month);
-		today.add(day);
-		JLabel curMovie = new JLabel("선택한 영화");
-		JLabel curTime = new JLabel("선택한 회차");
-		today.setPreferredSize(new Dimension(100,50));
-		curMovie.setPreferredSize(new Dimension(180,50));
-		curTime.setPreferredSize(new Dimension(120,50));
+		
+		//row1에 추가할 날짜를 reservationDates클래스에 저장된 데이터를 사용한 ReservationVO 클래스 불러오기 
+		new reservationDate();
+		new ReservationToday();
+		//font를 저장해둔 rFont클래스 불러오기
+		new rFont();
+		
+		JLabel curMovie = new JLabel(Theater.locData.getMovvieName(), SwingConstants.CENTER);
+		JLabel curTime = new JLabel(Theater.locData.getMovieTime(), SwingConstants.CENTER);
+		curMovie.setPreferredSize(new Dimension(250,50));
+		curTime.setPreferredSize(new Dimension(80,50));
+		
 		//row1 폰트설정
-		today.setFont(font1);
-		curMovie.setFont(font1);
-		curTime.setFont(font1);
-		row1.add(today);
-		row1.add(curMovie);
+		curMovie.setFont(rFont.font1);
+		curTime.setFont(rFont.font1);
+		
+		//row1에 데이터 추가
+		row1.add(ReservationToday.today);
+		row1.add(curMovie, BorderLayout.CENTER);
 		row1.add(curTime);
-		row1.setPreferredSize(new Dimension(500,80));
+		row1.setPreferredSize(new Dimension(600,80));
 		//row3 사이즈 설정(좌석번호 1~10)
 		row2.setPreferredSize(new Dimension(600,20));
 		for (int i = 0; i < 10; i++) {
@@ -96,8 +88,8 @@ public class Reservation {//예매정보 객체
 		col.setPreferredSize(new Dimension(20,240));
 		col.setLayout(new GridLayout(7,0));
 		row3_1.add(col);
-		row3_2.setPreferredSize(new Dimension(550,250));
-		row3_2.setLayout(new GridLayout(7,10));
+//		row3_2.setPreferredSize(new Dimension(550,250));
+		row3_2.setLayout(new GridLayout(7,10,0,13));
 		for(int i = 0 ; i< 7 ; i++) {
 			for(int j = 0 ; j<10 ; j++) {
 				JCheckBox box = new JCheckBox();
